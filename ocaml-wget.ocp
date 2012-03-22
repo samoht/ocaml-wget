@@ -1,0 +1,27 @@
+comp = [ "-g" ]
+link = [ "-g" ]
+
+begin library "ocaml-wget"
+  dirname = [ "src" ]
+  files = [
+    "stringext.ml"
+    "unixext.ml"
+    "base64.ml"
+    "http.ml"
+    "http_client.ml"
+    "wget.ml"
+   ]
+  requires = [ "unix" ]
+end
+
+begin program "owget"
+  dirname = [ "src" ]
+  files = [ "main.ml" ]
+  requires = [ "ocaml-wget" ]
+end
+
+begin library "unix"
+  generated = true
+  has_byte = true
+  has_asm = true
+end
