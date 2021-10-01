@@ -1,0 +1,13 @@
+opam-version: "2.0"
+maintainer: "thomas@gazagnaire.org"
+build: [
+  ["ocp-build" "-init"]
+  ["ocp-build" "-scan" "ocaml-wget" "owget"]
+]
+depends: [
+  "ocaml" {< "4.06.0"}
+  "ocp-build"
+]
+synopsis: "Basic wget-like client, based on the Citrix' HTTP library"
+description: "Pure OCaml implementation."
+dev-repo: "git+https://github.com/samoht/ocaml-wget.git"
